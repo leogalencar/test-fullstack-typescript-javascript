@@ -1,0 +1,331 @@
+:root {
+    font-family:
+        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #0f172a;
+    background-color: #f8fafc;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.app-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.app-header p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 0.2rem;
+}
+
+.user-count-badge {
+    background-color: #e2e8f0;
+    color: #334155;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+}
+
+.alert-success {
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.app-main {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .app-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+/* UserForm */
+.user-form h2,
+.list-header h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.user-form h2 {
+    margin-bottom: 1.25rem;
+}
+
+.form-error {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    padding: 0.7rem 0.9rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #334155;
+}
+
+.form-group input {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    font-size: 0.925rem;
+    color: #0f172a;
+    background-color: #ffffff;
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.form-group input:disabled {
+    background-color: #f1f5f9;
+    cursor: not-allowed;
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+button {
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        opacity 0.15s ease;
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    flex: 1;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 0.65rem 1rem;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: #1d4ed8;
+}
+
+.btn-secondary {
+    background-color: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    padding: 0.65rem 1rem;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #e2e8f0;
+}
+
+/* UserList */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.btn-refresh {
+    background: transparent;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+}
+
+.btn-refresh:hover:not(:disabled) {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.user-table th {
+    padding: 0.75rem 0.85rem;
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.user-table td {
+    padding: 0.85rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.user-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.user-table tbody tr.row-editing {
+    background-color: #eff6ff;
+}
+
+.cell-id {
+    color: #64748b;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+}
+
+.cell-name {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.cell-email {
+    color: #475569;
+}
+
+.cell-date {
+    color: #64748b;
+    font-size: 0.825rem;
+    white-space: nowrap;
+}
+
+.role-badge {
+    display: inline-block;
+    background-color: #e0e7ff;
+    color: #3730a3;
+    font-size: 0.775rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+}
+
+.role-empty {
+    color: #94a3b8;
+}
+
+.btn-edit {
+    background-color: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+}
+
+.btn-edit:hover:not(:disabled) {
+    background-color: #dbeafe;
+}
+
+.user-list-state {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: #64748b;
+}
+
+.user-list-state p {
+    font-weight: 500;
+    color: #334155;
+    margin-bottom: 0.25rem;
+}
+
+.user-list-state span {
+    font-size: 0.875rem;
+}
+
+.load-error {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
