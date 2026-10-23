@@ -19,7 +19,7 @@ export const userService = {
 
         // validacao de email unico
         if (emailExists) {
-            throw new AppError("Email já está em uso", 400);
+            throw new AppError("E-mail já está em uso", 400);
         }
 
         return db.user.create({
@@ -48,7 +48,7 @@ export const userService = {
 
             // validacao de email unico
             if (emailTaken) {
-                throw new AppError("Email já está em uso", 400);
+                throw new AppError("E-mail já está em uso", 400);
             }
         }
 
